@@ -1,0 +1,11 @@
+.grow {
+    flex-grow: 0 !important;
+}
+.fontsm {
+    font-size: 12px;
+    color: rgb(80, 78, 78);
+}
+.fontmd {
+    font-size: 16px;
+    color: rgb(80, 78, 78);
+}
