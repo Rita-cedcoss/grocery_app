@@ -1,11 +1,17 @@
 import React from 'react'
 type ProdSlider1Props={
     arrimg:string[],
-    height:string
+    height:string,
+    heading:string
 }
 const ProdSlider1 = (props:ProdSlider1Props) => {
   return (
+    <>
+    <div className='container-fluid border-bottom mt-3'>
+      <h3>{props.heading}</h3>
+    </div>
     <div id="demo1" className="carousel slide" data-bs-ride="carousel">
+
 
 {/* <!-- Indicators/dots --> */}
 <div className="carousel-indicators">
@@ -37,7 +43,7 @@ const ProdSlider1 = (props:ProdSlider1Props) => {
    
   </div>
 
-  <div className="carousel-item active">
+  <div className="carousel-item ">
     <div className='row p-2'>
     <div className="col-3">
     <img src={props.arrimg[4]} alt="Los Angeles" className="d-block" style={{"minHeight":`${props.height}`, "width":"100%"}}/>
@@ -55,7 +61,7 @@ const ProdSlider1 = (props:ProdSlider1Props) => {
     </div>
    
   </div>
-  <div className="carousel-item active">
+  <div className="carousel-item ">
     <div className='row p-2'>
     <div className="col-3">
     <img src={props.arrimg[8]} alt="Los Angeles" className="d-block" style={{"minHeight":`${props.height}`, "width":"100%"}}/>
@@ -83,6 +89,7 @@ const ProdSlider1 = (props:ProdSlider1Props) => {
   <span className="carousel-control-next-icon bg-dark rounded-circle p-4"></span>
 </button>
 </div>
+</>
   )
 }
 

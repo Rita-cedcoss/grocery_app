@@ -1,9 +1,12 @@
 import React from 'react'
-
-const ProdBanner = () => {
+type  prodbannerProps={
+  imgs:string,
+  height:string
+}
+const ProdBanner = (props:prodbannerProps) => {
   return (
-    <div className='container-fluid'>
-       <img src='https://storage.sg.content-cdn.io/in-resources/075ba640-9325-4e0e-8157-cdf49e2a8909/Images/userimages/nov_20_2020_greestrip.jpg' style={{"minHeight":"50px","width":"100%"}}/>
+    <div className='container-fluid mt-2 mb-2'>
+       <img alt='' src={props.imgs} style={{"minHeight":`${props.height}`,"width":"100%"}}/>
     </div>
   )
 }

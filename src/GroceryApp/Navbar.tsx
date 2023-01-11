@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,17 +7,20 @@ const Navbar = () => {
       <div className="container-fluid">
         <div>
           <a className="navbar-brand" href="dfgdf">
-            <img
+           <Link  to="/">
+           <img
               className="logo"
               alt=""
               src="https://martjackstorage.blob.core.windows.net/in-resources/075ba640-9325-4e0e-8157-cdf49e2a8909/Images/userimages/logo.jpg"
             />
+           </Link>
+            
           </a>
           <select
             className="form-select form-select-lg mb-3 border-0 bg-success text-light mt-2 "
             aria-label=".form-select-lg example"
           >
-            <option selected>Open this select menu</option>
+            <option selected>Shop By Categories</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -64,15 +68,17 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item me-5">
-              <a className="nav-link active" href="#">
+              {/* <a className="nav-link active" href="#"> */}
+                <Link to="/cart">
               <i
                   className="bi bi-chevron-down"
                   style={{ fontSize: "20px", color: "#147618" }}
                 ></i>
                <i className="bi bi-cart3" style={{ fontSize: "30px", color: "#147618" }}></i>
-                <span className="fontmd">hello SignIn to </span>
-                <p className="fontmd ms-5">you Account</p>
-              </a>
+                <span className="fontmd">My Cart</span>
+                <p className="fontmd ms-5">Items 0</p>
+                </Link>
+              {/* </a> */}
             </li>
           </ul>
         </div>
