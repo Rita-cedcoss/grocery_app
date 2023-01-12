@@ -6,8 +6,29 @@ import ProdBanner from "./ProdBanner";
 import ProdSlider from "./ProdSlider";
 import ProdSlider1 from "./ProdSlider1";
 import About from "./About";
+type ProdData = {
+  _id: string;
+  quantity:number;
+  calPrice:number;
+  title: string;
+  description: string;
+  category: string;
+  brand: string;
+  expDate: string;
+  mfdDate: string;
+  size: string;
+  price: number;
+  stock: string;
+  images: string[];
+  suggestion: string[];
+  allegations: string[];
+}
 
-const Home = () => {
+type DealsProps={
+  cartarr:ProdData[] ,
+  setCartarr:React.Dispatch<React.SetStateAction<[] | ProdData[]>>
+}
+const Home = (props:DealsProps) => {
   const arrImg = [
     "https://storage.sg.content-cdn.io/in-resources/075ba640-9325-4e0e-8157-cdf49e2a8909/Images/userimages/ss-banners/2022-12-29/Tableware-min.png",
     "https://storage.sg.content-cdn.io/in-resources/075ba640-9325-4e0e-8157-cdf49e2a8909/Images/userimages/ss-banners/2022-12-29/Home-Care-min.png",
@@ -45,12 +66,12 @@ const Home = () => {
       />
       <ProdSlider1 heading="Offers" arrimg={arrImg} height="200px" />
       <CategoryProduct categorymage={categoryImage} />
-      <DealsSlider prodData={productData} heading="Fresh Deals" />
+      <DealsSlider prodData={productData} heading="Fresh Deals" cartArr={props.cartarr} setCartArr={props.setCartarr}/>
       <ProdBanner
         height="100px"
         imgs="https://storage.sg.content-cdn.io/in-resources/075ba640-9325-4e0e-8157-cdf49e2a8909/Images/userimages/Online%20Grocery%20Shopping-Buy%20grocery%20online%20save.jpg"
       />
-      <DealsSlider prodData={productData} heading="Product Categories" />
+      <DealsSlider prodData={productData} heading="Product Categories" cartArr={props.cartarr} setCartArr={props.setCartarr}/>
       
       <ProdBanner
         height="100px"
